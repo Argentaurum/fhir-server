@@ -1,4 +1,5 @@
 SUPPORTED_RESOURCE_TYPES = frozenset([
+    "Binary",
     "Patient",
     "Encounter",
     "Observation",

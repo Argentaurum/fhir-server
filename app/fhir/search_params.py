@@ -8,6 +8,9 @@ Each param has:
 """
 
 SEARCH_PARAMS = {
+    "Binary": [
+        {"name": "contenttype", "type": "token", "paths": ["contentType"]},
+    ],
     "Patient": [
         {"name": "family", "type": "string", "paths": ["name.family"]},
         {"name": "given", "type": "string", "paths": ["name.given"]},

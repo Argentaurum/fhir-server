@@ -13,7 +13,7 @@ def test_metadata(client):
     types = {r["type"] for r in data["rest"][0]["resource"]}
     assert "Patient" in types
     assert "Observation" in types
-    assert len(types) == 19
+    assert len(types) == 21
 
 
 def test_create_patient(client, sample_patient):

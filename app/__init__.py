@@ -19,6 +19,7 @@ def create_app(config_name=None):
     # Register blueprints
     from .api.metadata import metadata_bp
     from .api.fhir_blueprint import fhir_bp
+    from .api.binary import binary_bp
     from .api.batch import batch_bp
     from .api.operations import operations_bp
     from .api.bulk_export import bulk_export_bp
@@ -28,6 +29,7 @@ def create_app(config_name=None):
     app.register_blueprint(metadata_bp)
     app.register_blueprint(operations_bp)  # Before fhir_bp so $lookup routes match first
     app.register_blueprint(bulk_export_bp)  # Before fhir_bp so $export routes match first
+    app.register_blueprint(binary_bp)       # Before fhir_bp so /Binary routes take precedence
     app.register_blueprint(fhir_bp)
     app.register_blueprint(batch_bp)
     app.register_blueprint(admin_bp)
